@@ -69,3 +69,11 @@ var fight = function() {
 
 // run fight function to start game
 fight();
+
+var enemy1 = "Roborto";
+var enemy2 = "Amy Android";
+var enemy3 = "Robo Trumble";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
+for(i = 0; i < enemyNames.length; i++){
+  fight(enemyNames[i]);
+}
