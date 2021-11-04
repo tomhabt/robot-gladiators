@@ -1,20 +1,18 @@
-// var playerName = 'Clank McKrank';
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-// You can also log multiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
-
-var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
+var enemyNames = ['Roborto', 'Amy Android', 'Robo Trumble'];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
+console.log(enemyNames);
+console.log(enemyNames.length);
+console.log(enemyNames[0]);
+console.log(enemyNames[3]);
 
-
-
-// fight function
+// fight function (now with parameter for enemy's name)
 var fight = function(enemyName) {
   while (playerHealth > 0 && enemyHealth > 0) {
     // ask player if they'd like to fight or run
@@ -30,10 +28,11 @@ var fight = function(enemyName) {
         window.alert(playerName + ' has decided to skip this fight. Goodbye!');
         // subtract money from playerMoney for skipping
         playerMoney = playerMoney - 10;
-        console.log("playerMoney", playerMoney)
+        console.log("playerMoney", playerMoney);
         break;
       }
     }
+
     // remove enemy's health by subtracting the amount set in the playerAttack variable
     enemyHealth = enemyHealth - playerAttack;
     console.log(
@@ -76,6 +75,7 @@ var startGame = function() {
   playerHealth = 100;
   playerAttack = 10;
   playerMoney = 10;
+
   for (var i = 0; i < enemyNames.length; i++) {
     if (playerHealth > 0) {
       window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
@@ -90,16 +90,11 @@ var startGame = function() {
       window.alert("You have lost your robot in battle! Game Over!");
       break;
     }
-     // after the loop ends, player is either out of health or enemies to fight, so run the endGame function
-    endGame();
   }
-  // play again
-  startGame();
+  // after the loop ends, player is either out of health or enemies to fight, so run the endGame function
+  endGame();
 };
 
-
-
-// function to end the entire game
 var endGame = function() {
   // if player is still alive, player wins!
   if (playerHealth > 0) {
@@ -107,7 +102,7 @@ var endGame = function() {
   } 
   else {
     window.alert("You've lost your robot in battle.");
-  };
+  }
   // ask player if they'd like to play again
   var playAgainConfirm = window.confirm("Would you like to play again?");
 
@@ -117,8 +112,8 @@ var endGame = function() {
   } 
   else {
     window.alert("Thank you for playing Robot Gladiators! Come back soon!");
-  };
-};
+  }
+}
 
 // start the game when the page loads
 startGame();
